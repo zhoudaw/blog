@@ -5,11 +5,21 @@ module.exports = [
 		items: [
 			{
 				text: 'vue.js',
-				link: ''
+				link: '',
 			},
 			{
 				text: 'java',
-				link: '/study/java/'
+				link: '/study/java/',
+			},
+		],
+    },
+    //工具使用问题
+	{
+		text: '工具使用问题',
+		items: [
+			{
+				text: 'git',
+				link: '/study/git/',
 			},
 		],
 	},
