@@ -2,7 +2,7 @@ const NAV = require('./nav.js')
 const SIDEBAR = require('./sidebar.js')
 module.exports = {
     base:"/blog/",
-	title: 'fy旺仔',
+	title: 'can',
 	themeConfig: {
 		lastUpdated: '更新时间',
 		sidebar: 'auto',
