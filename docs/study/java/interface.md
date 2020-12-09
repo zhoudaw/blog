@@ -7,7 +7,7 @@
  3.1 JDK7以前：只能定义全局常量和抽象方法
       >全局常量：public static final的  (但是书写的时候可以省略不写)
       >抽象方法：public abstract的
- 3.2 除了定义全局常量和方法之外 还可以定义静态方法 默认方法
+ 3.2 JDK8:除了定义全局常量和方法之外 还可以定义静态方法 默认方法
 ``` 
 4. 接口中不能定义构造器！意味着接口不可以实例化
 5. Java开发中,接口通过类去实现（implements）方式来使用
@@ -170,5 +170,147 @@ class ProxyServer implements NetWork {
 		check();
 		work.browse();
 	}
+}
+```
+
+## 比较圆的大小例子
+``` js
+ public interface CompareObject {
+	public int compareTo(Object o);
+}
+
+```
+``` js
+public class Circle {
+	private double radius;
+
+	public Circle(double radius) {
+		super();
+		this.radius = radius;
+	}
+
+	public Circle() {
+		super();
+	}
+
+	public double getRadius() {
+		return radius;
+	}
+
+	public void setRadius(double radius) {
+		this.radius = radius;
+	}
+	
+  
+}
+```
+``` js
+ public class ComparableCircle extends Circle implements CompareObject {
+    public ComparableCircle(double radius) {
+    	super(radius);
+    }
+	@Override
+	public int compareTo(Object o) {
+	     if( this == o) {
+	    	 return 0;
+	     }
+	     if(o instanceof ComparableCircle) {
+	    	 ComparableCircle c=(ComparableCircle)o;
+//	    	 錯誤
+//	    	 return (int)( this.getRadius() -c.getRadius());
+	    	 if(this.getRadius()>c.getRadius()) {
+	    		 return 1;
+	    	 }else if(this.getRadius()<c.getRadius()) {
+	    		 return -1;
+	    	 }else {
+	    		 return 0;
+	    	 }
+	     }else {
+	    	 return 0;
+	     }
+	}
+}
+
+```
+``` js
+public class ComparableCircleTest {
+	public static void main(String[] args) {
+		ComparableCircle c1 =new ComparableCircle(3.4);
+		ComparableCircle c2 =new ComparableCircle(3.6);
+        int cvalue=  c1.compareTo(c2);
+        if(cvalue>0) {
+        	System.out.println("c1對象大");
+        }else if(cvalue <0) {
+        	System.out.println("c2對象大");
+        }else {
+        	System.out.println("c1 c2 一樣大");
+        }
+	}
+}
+```
+## interface.JDK8新特性
+1. 除了定义全局常量和方法之外 还可以定义静态方法 默认方法
+
+```js
+public interface CompareA{
+    //静态方法
+    public static void method1(){
+       sysout.out.println("CompareA:北京")
+    }
+    //默认方法
+    public default void method2(){
+           sysout.out.println("CompareA:上海")
+    }
+    default void method3(){
+            sysout.out.println("CompareA:上海")
+    }
+}
+public interface CompareB{
+     default void method3(){
+            sysout.out.println("CompareB:上海")
+    }
+}
+
+1. 子类
+public class SubClassTest{
+    public static void main(String[] args){
+        SubClass s= new SubClass();
+        //错误的
+        // s.method1()
+        // SubClass.menthod1()
+        // 知识点1：接口中定义的静态方法，只能通过接口来调用
+        CompareA.menthod1();
+        //知识点2：通过实现类的对象，可以调用接口中的默认方法
+        //如果实现类重写了接口的默认方法，调用时，仍然调用的是重写以后的方法
+        s.method2();   //SubClass:上海
+        //知识点3.如果子类（或者实现类）继承的是父类和实现类的接口中声明了的同名同参数的方法
+        //那么子类在没有重写此方法的情况下 默认调用的是父类中的同名参数的方法--》类优先原则
+
+        //知识点4
+        s.method3();    //SuperClass:北京
+    }
+}
+//如果同时实现2个接口会报错 不知道是调用谁的method3()方法 需要重写
+class SubClass extends SuperClass implements CompareA ,CompareB{
+    public void method2(){
+           sysout.out.println("SubClass:上海")
+    }
+       public void method3(){
+           sysout.out.println("SubClass:厦门")
+    }
+    //知识点5：如何在子类（或者实现类）的方法中调动父类，接口中被重写的方法
+    public void myMehtohd(){
+        method3(); //调用自己定义的重写方法
+        super.method3()//调用的是父类中声明的
+        //调用接口中默认的方法
+        CompareA.super.method3();
+        CompareB.super.method3();
+    }
+}
+2. 父类
+public class SuperClass{
+     public void method3(){
+         sysout.out.println("SuperClass:北京")
+     }
 }
 ```

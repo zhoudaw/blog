@@ -34,5 +34,17 @@ module.exports = [
 		collapsable: false,
 		sidebarDepth: 1,
 		children: ['/study/java/fianl']
+	},
+    {
+		title: 'java-内部类',
+		collapsable: false,
+		sidebarDepth: 1,
+		children: ['/study/java/lnnerclass']
+	},
+    {
+		title: 'java-异常处理',
+		collapsable: false,
+		sidebarDepth: 1,
+		children: ['/study/java/abnormal']
 	}
 ]
