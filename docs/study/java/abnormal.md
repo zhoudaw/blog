@@ -18,7 +18,9 @@
         |-------IndexOutOfBoundsException
 
 ::: -->
+
 ## 以下是运行时异常
+
 #### NullPoionterException 例子:
 
 ```js
@@ -55,7 +57,7 @@ public class ExceptionTest{
 }
 ```
 
-#### ClassNotFountException 例子
+#### ClassNotFountException 例子:
 
 ```js
 public class ExceptionTest{
@@ -66,7 +68,7 @@ public class ExceptionTest{
 }
 ```
 
-#### NumberFormatException 例子
+#### NumberFormatException 例子:
 
 ```js
 public class ExceptionTest{
@@ -78,7 +80,7 @@ public class ExceptionTest{
 }
 ```
 
-#### InputMismatchException 例子
+#### InputMismatchException 例子:
 
 ```js
 public class ExceptionTest{
@@ -90,7 +92,7 @@ public class ExceptionTest{
 }
 ```
 
-#### ArithmeticException 例子
+#### ArithmeticException 例子:
 
 ```js
 public class ExceptionTest{
@@ -101,3 +103,89 @@ public class ExceptionTest{
 		}
 }
 ```
+
+## Java 异常处理方式：
+
+::: tip
+
+1. 方式一：try-cathch-finally
+2. 方法二：throws + 异常类型
+   :::
+
+```js
+try{
+ //可能出现异常的代码
+}catch(异常类型1 变量名1){
+//处理异常的方式
+}catch(异常类型2 变量名2){
+   //处理异常的方式
+}catch(异常类型2 变量名2){
+   //处理异常的方式
+}
+// ...
+finally{
+    //一定会执行的代码
+}
+// 说明
+```
+
+```html
+1. 常用的异常对象处理的方式： >String getMessage(); >printStackTrace();
+```
+
+## 例子一
+
+```js
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class ExceptionTest {
+	public static void main(String[] args) {
+		ExceptionTest E = new ExceptionTest();
+//		E.test1();
+		E.test2();
+	}
+
+	public void test1() {
+		String str = "123";
+		str = "abc";
+		int num = 0;
+		try {
+			num = Integer.parseInt(str);
+			System.out.println("hello---1");
+		} catch (NumberFormatException e) {
+			System.out.println("出现数值转换异常了，不要着急....");
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			System.out.println("空指针异常....");
+		}
+		System.out.println("hello---2");
+
+		System.out.println(num);
+	}
+
+	public void test2() {
+		try {
+			File file = new File("hello.txt");
+			FileInputStream fis = new FileInputStream(file);
+			int data = fis.read();
+			while (data != -1) {
+				System.out.println((char) data);
+				data = fis.read();
+			}
+			fis.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+
+```
+

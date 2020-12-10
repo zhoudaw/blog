@@ -13,6 +13,9 @@ module.exports = [
 			},
 		],
     },
+    {
+      text:'Array操作',link:'/study/array/'
+    },
     //工具使用问题
 	{
 		text: '工具使用问题',
