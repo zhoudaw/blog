@@ -11,12 +11,17 @@ module.exports = [
 				text: 'java',
 				link: '/study/java/',
 			},
+			{
+				text: 'es6',
+				link: '/study/es6/',
+			},
 		],
-    },
-    {
-      text:'Array操作',link:'/study/array/'
-    },
-    //工具使用问题
+	},
+	{
+		text: 'Array操作',
+		link: '/study/array/',
+	},
+	//工具使用问题
 	{
 		text: '工具使用问题',
 		items: [
