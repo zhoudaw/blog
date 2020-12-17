@@ -46,5 +46,11 @@ module.exports = [
 		collapsable: false,
 		sidebarDepth: 1,
 		children: ['/study/java/abnormal']
+	},
+    {
+		title: 'java-线程',
+		collapsable: false,
+		sidebarDepth: 1,
+		children: ['/study/java/thread']
 	}
 ]

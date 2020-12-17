@@ -47,7 +47,7 @@ console.log(num1) //63888
 let obj = [
 	{ name: 'vue', num: 12 },
 	{ name: 'html', num: 10 },
-	{ name: 'css', num: 30 },
+	{ name: 'css', num: 30 }
 ]
 let num =obj.reduce((a,b)=>{
   return a+b.num

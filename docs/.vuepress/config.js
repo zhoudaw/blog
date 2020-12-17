@@ -1,7 +1,7 @@
 const NAV = require('./nav.js')
 const SIDEBAR = require('./sidebar.js')
 module.exports = {
-	base: '/blog/',
+	// base: '/blog/',
 	title: 'can',
 	themeConfig: {
 		lastUpdated: '更新时间',
