@@ -52,5 +52,11 @@ module.exports = [
 		collapsable: false,
 		sidebarDepth: 1,
 		children: ['/study/java/thread']
+	},
+    {
+		title: 'java-线程生命周期',
+		collapsable: false,
+		sidebarDepth: 1,
+		children: ['/study/java/lifecycle']
 	}
 ]

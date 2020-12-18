@@ -122,7 +122,7 @@ class MyThread2 extends Thread{
  * 3.currenThread(): 静态方法，返回执行当前代码的线程
  * 4.getName():获取当前线程的名字
  * 5.setName():设置当前线程的名字
- * 6.yield(): //释放当前cpu的执行权
+ * 6.yield(): 释放当前cpu的执行权
  * 7.join():在线程A中调用线程B的join()方法，此时线程A就进入阻塞状态，直到线程B完全执行完以后，线程A才结束阻塞状态。
  * 8.stop():已过时，当执行此方法时，强制结束当前线程。
  * 9.sleep(long millitime); 让当前线程“睡眠”指定的millitime毫秒，在自指定的millitime毫秒时间内，当前线程是阻塞的状态
@@ -188,5 +188,199 @@ public class ThreadMethodTest {
     }
 }
 
+
+```
+
+## 例子二 
+```js
+//创建3个窗口买票 总数为100张
+class Window extends Thread{
+    private static int ticket =100;
+    @Override
+    public void run() {
+       while (true){
+           if(ticket>0){
+               System.out.println(getName()+":卖票,票号为："+ticket);
+               ticket--;
+           }else{
+               break;
+           }
+       }
+    }
+}
+public class WindowTest {
+    public static void main(String[] args) {
+        Window w1=new Window();
+        Window w2=new Window();
+        Window w3=new Window();
+        w1.setName("窗口一");
+        w2.setName("窗口二");
+        w3.setName("窗口三");
+        w1.start();
+        w2.start();
+        w3.start();
+    }
+}
+```
+## 例子三 
+```js
+//创建3个窗口买票 总数为100张,使用显示Runnable接口的方式
+class Window1 implements Runnable {
+    private int ticket = 100;
+    @Override
+    public void run() {
+        while (true) {
+            if (ticket > 0) {
+                System.out.println(Thread.currentThread().getName() + "：卖票，票号为:" + ticket);
+                ticket--;
+            } else {
+                break;
+            }
+        }
+    }
+}
+public class WindowTest1 {
+    public static void main(String[] args) {
+        Window1 win = new Window1();
+        Thread t1 = new Thread(win);
+        Thread t2 = new Thread(win);
+        Thread t3 = new Thread(win);
+        t1.setName("窗口1");
+        t2.setName("窗口2");
+        t3.setName("窗口3");
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
+
+```
+## Runnable 
+::: tip
+
+
+ * 创建多线程的方式二：实现Runnable接口
+ * 1.创建一个实现Runnable接口的类
+ * 2.实现类去实现Runnable中的抽象方法run()
+ * 3.创建实现的对象
+ * 4.将此对象作为参数传递到Thread类的构造器中，创建Thread类的对象中
+ * 5.通过Thread类的对象调用start()
+ 
+
+:::
+```js
+//多线程 一个类下的多个构造器
+//1.创建一个实现Runnable接口的类
+class MTHread implements Runnable {
+    //   2.实现类去实现Runnable中的抽象方法run()
+    @Override
+    public void run() {
+        for (int i = 0; i < 100; i++) {
+            if (i % 2 == 0) {
+                System.out.println(Thread.currentThread().getName() + ":" + i);
+            }
+        }
+    }
+}
+
+public class ThreadTest1 {
+    //    3.创建实现的对象
+    public static void main(String[] args) {
+////    3.创建实现的对象
+        MTHread m = new MTHread();
+////    4.将此对象作为参数传递到Thread类的构造器中，创建Thread类的对象中
+        Thread t = new Thread(m);
+        t.setName("线程一");
+////    5.通过Thread类的对象调用start()
+        t.start();
+        Thread t1 = new Thread(m);
+        t1.setName("线程二");
+        t1.start();
+    }
+}
+```
+
+## 同步方法
+```js
+class Window3 implements Runnable {
+    private int ticket = 100;
+    @Override
+    public void run() {
+        while (true) {
+            show();
+        }
+    }
+    private synchronized void show() { //同步监视器 ：this
+//        synchronized (this) {
+            if (ticket > 0) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName() + "：卖票，票号为:" + ticket);
+                ticket--;
+//            }
+        }
+    }
+}
+
+public class WindowTest3 {
+    public static void main(String[] args) {
+        Window3 wo = new Window3();
+        Thread wd1 = new Thread(wo);
+        Thread wd2 = new Thread(wo);
+        Thread wd3 = new Thread(wo);
+        wd1.setName("窗口1");
+        wd2.setName("窗口2");
+        wd3.setName("窗口3");
+        wd1.start();
+        wd2.start();
+        wd3.start();
+    }
+}
+
+```
+## 方法 同步 Thread
+```js
+
+/**
+ * 使用同步方法处理继承Thread类的方式中的线程安全问题
+ */
+class Window4 extends Thread {
+    private static int ticket = 100;
+    @Override
+    public void run() {
+        while (true) {
+            show();
+        }
+    }
+
+    private static synchronized void show() { //同步监视器：Window4.class
+        if (ticket > 0) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread().getName() + "：卖票，票号为:" + ticket);
+            ticket--;
+        }
+    }
+}
+
+public class WindowTest4 {
+    public static void main(String[] args) {
+        Window4 wd1 = new Window4();
+        Window4 wd2 = new Window4();
+        Window4 wd3 = new Window4();
+        wd1.setName("窗口1");
+        wd2.setName("窗口2");
+        wd3.setName("窗口3");
+        wd1.start();
+        wd2.start();
+        wd3.start();
+    }
+}
 
 ```
