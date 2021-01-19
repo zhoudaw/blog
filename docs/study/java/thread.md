@@ -3,10 +3,10 @@
 ::: tip
 
 1. 多线程的创建 方式一：继承与 Thread 类
-1. 创建一个继承于 Thread 类的子类
-1. 重写 Thread 类的 run() 将此线程执行的操作声明在 run()中
-1. 创建 Thread 类的 run 类的子类的对象
-1. 通过此对象调用 start()
+2. 创建一个继承于 Thread 类的子类
+3. 重写 Thread 类的 run() 将此线程执行的操作声明在 run()中
+4. 创建 Thread 类的 run 类的子类的对象
+5. 通过此对象调用 start()
   :::
 
 #### 例子：遍历 100 以内的所有的偶数
@@ -130,7 +130,7 @@ class MyThread2 extends Thread{
  * 线程的优先级：
  * MAX_PRIORITY:10
  * MIN_PRIORITY:1
- * NORM_PRIORITY:5
+ * NORM_PRIORITY:5 默认优先级
  * 如何获取和设置当前线程的优先级：
  * getPriority() 获取
  * setPriority(int p) 设置
@@ -146,7 +146,7 @@ class  HelloThread extends Thread{
         for (int i=0;i<100;i++){
             if(i % 2 == 0){
                 try {
-                    sleep(10);
+                    sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -258,7 +258,6 @@ public class WindowTest1 {
 ## Runnable 
 ::: tip
 
-
  * 创建多线程的方式二：实现Runnable接口
  * 1.创建一个实现Runnable接口的类
  * 2.实现类去实现Runnable中的抽象方法run()
@@ -266,7 +265,6 @@ public class WindowTest1 {
  * 4.将此对象作为参数传递到Thread类的构造器中，创建Thread类的对象中
  * 5.通过Thread类的对象调用start()
  
-
 :::
 ```js
 //多线程 一个类下的多个构造器
