@@ -17,9 +17,11 @@
  * 3.同步监视器，俗称：锁。任何一类的对象，都可以充当锁
  * 要求：多个线程比要共用同一把锁
  * 方法二：同步代码块
+ * 1.如果操作共享数据的代码完整的声明在一个方法中，我们不妨将此方法声明同步的
+ * 
 :::
 ## 安全性处理 一 
-```js
+```js 
 
 class Window1 implements Runnable {
     private int ticket = 100;
@@ -30,7 +32,7 @@ class Window1 implements Runnable {
             synchronized (this){ //此时的this，唯一的window1的对象
                 if (ticket > 0) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
