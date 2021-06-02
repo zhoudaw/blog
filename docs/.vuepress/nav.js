@@ -1,5 +1,6 @@
 module.exports = [
 	{ text: '首页', link: '/' },
+	{text:'面试题',link:'/study/interview/'},
 	{
 		text: '学习语言',
 		items: [
