@@ -44,10 +44,6 @@
 
 
 
-
-
-
-
 ## 其他
 ### 1-什么是闭包
 1. 函数 A 内部有一个函数 B，函数 B 可以访问到函数 A 中的变量，那么函数 B 就是闭包.
@@ -114,5 +110,87 @@ console.log(v1);
 2. 不能够使用arguments对象
 3. 不能用作构造函数，这就是说不能够使用new命令，否则会抛出一个错误
 4. 不可以使用yield命令，因此箭头函数不能用作 Generator 函数
+### 9-Object.defineProperty (obj,prop,descriptor)
+#####  接受三个参数
+```js
+1. obj要定义属性对象
+2. prop要定义或者修改属性的名称或者Symbol
+3. descriptor要定义或者修改的属性描述符
+     configurable
+       《当且仅当该属性的 configurable 键值为 true 时，该属性的描述符才能够被改变，
+         同时该属性也能从对应的对象上被删除。默认为 false。》
+     enumerable
+       《当且仅当该属性的 enumerable 键值为 true 时，该属性才会出现在对象的枚举属性中。
+         默认为 false。》
+     value
+       《该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。
+         默认为 undefined。》
+     writable
+       《当且仅当该属性的 writable 键值为 true 时，属性的值，也就是上面的 value，才能
+         被赋值运算符改变。默认为 false。》
+      
+```
 
+```js
+<body>
+  <div></div>
+  <input type="text">
+</body>
+<script>
+  //类似 vue的data
+  let obj = {}
 
+  /*
+   *obj      要劫持的对象
+   *name     要劫持对象的属性
+   *callback 劫持以后的操作
+   */
+  function watch(obj, name, callback) {
+    let value = obj.name
+    Object.defineProperty(obj, name, {
+      get() {
+        //返回获取属性值
+        return value
+      },
+      set(newVal) {
+        // 触发setter给obj赋值
+        value = newVal
+        //执行劫持后的操作
+        callback(value)
+      },
+    })
+  }
+  function doSomething(value) {
+    document.querySelector('div').innerHTML = value
+    document.querySelector('input').value = value
+  }
+  document.querySelector('input').addEventListener('input', (e) => {
+    obj['val'] = e.target.value
+  })
+  watch(obj, 'val', doSomething)
+
+</script>
+```
+### 10-事件捕获
+1. 事件从最上一级标签开始往下查找，直到捕获到事件目标(target)。
+
+### 10-事件冒泡
+1. 事件从事件目标(target)开始，往上冒泡直到页面的最上一级标签。
+2. event.stopPropagation()
+
+## webpack
+### 核心模块
+1. 入口entry
+2. 出口 output
+3. loder
+4. pulgin 插件
+5. mode 模式
+
+```js
+module.export={
+    publicPath:'根路径 /name',
+    outputDir:'dist 打包的时候生成的文件名',
+    lintOnSave:'true/false'是否开启eslint,
+    configureWebpack=config=>{}
+}
+````
