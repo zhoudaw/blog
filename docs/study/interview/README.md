@@ -81,7 +81,22 @@ mounted () {
 
 ## 其他
 ### 1-什么是闭包
+
 1. 函数 A 内部有一个函数 B，函数 B 可以访问到函数 A 中的变量，那么函数 B 就是闭包.
+2. 闭包作用延申了变量的作用范围
+```js
+function fun(){
+  let a =1
+  function fun2(){
+    console.log(a)
+  }
+  return fun2
+}
+let f =fun()
+console.log(f)
+// 类似
+let f = fun2(){ console.log(a)}
+```
 ### 2-export和export default的区别？
 ```js
 export default  xxx
@@ -212,6 +227,89 @@ console.log(v1);
 ### 10-事件冒泡
 1. 事件从事件目标(target)开始，往上冒泡直到页面的最上一级标签。
 2. event.stopPropagation()
+
+### 11-面向对象
+```js
+class Person(name,age){
+  this.name=name
+  this.age=age
+  // 多个实例不推荐这样创建 每次创建一个内存会开辟一个fun空间 容易浪费
+  this.sing=function(){
+    console.log('我会唱歌')
+  }
+}
+// 推荐使用prototype 
+// 对象系统上自己添加一个__proto__指向我们构造函数的原型对象
+
+Person.prototype={
+  constructor:Star,
+  sing:function(){
+  console.log('我会唱歌')
+  },
+  movie:function(){
+  console.log('我会演电影')
+  }
+}
+Person.prototype.sin=function(){
+     console.log('我会唱歌')
+}
+
+let ldh = new Person('刘德华'，18)
+let zxy = new Person('张学友'，17)
+
+```
+1. call() fun.call(thisAry,arg1,ar2,...) 
+```html
+ thisAry 当前调用函数this的指向对象
+ ary1,ar2 传递的其他参数 
+ function fn(x,y){
+   console.log('我想喝奶茶')
+   console.log(this)
+   console.log(x+y)
+ }
+ let o ={
+   name:'zdw'
+ }
+ fn.call(o,1,2)
+```
+2. bind  fun.bind(thisAry,arg1,ar2,...) 
+```html
+bing() 方法不会调用函数，但是能改变函数内部this指向
+ thisAry 当前调用函数this的指向对象
+ ary1,ar2 传递的其他参数 
+ 返回由指定的this值和初始化参数改造的原函数拷贝
+
+// 三秒后触发
+ let btn=document.queyrSelector('button')
+ btn.onclick=function(){
+   this.disabled=true
+   setTimenout(function(){
+     this.disabled=false
+   }.bind(this),3000)
+ }
+
+```
+3. apply fun.apply(thisAry,[arsgArray])
+```html
+thisAry 当前调用函数this的指向对象
+arsgArray:传递的值，必须包含在数组里面
+返回值就是函数的返回值，因为它就是调用函数
+
+```
+### 12-递归
+1. 求阶乘100
+```js
+ function fn(n){
+   if(n===1){
+     retrun 1
+   }
+   retrun n*fn(n-1)
+ }
+ fn(100)
+```
+### 13-浅拷贝
+### 14-深拷贝
+
 
 ## webpack
 ### 核心模块
