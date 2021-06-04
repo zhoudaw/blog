@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>singleton | can</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.fab77d47.css" as="style"><link rel="preload" href="/assets/js/app.259e3284.js" as="script"><link rel="preload" href="/assets/js/2.03478d8e.js" as="script"><link rel="preload" href="/assets/js/28.80451a10.js" as="script"><link rel="prefetch" href="/assets/js/10.2a004e8f.js"><link rel="prefetch" href="/assets/js/11.68eb73fb.js"><link rel="prefetch" href="/assets/js/12.a80ff367.js"><link rel="prefetch" href="/assets/js/13.f929eb35.js"><link rel="prefetch" href="/assets/js/14.c87859b1.js"><link rel="prefetch" href="/assets/js/15.a710af26.js"><link rel="prefetch" href="/assets/js/16.1c2bc79a.js"><link rel="prefetch" href="/assets/js/17.aaeed498.js"><link rel="prefetch" href="/assets/js/18.5b1ef161.js"><link rel="prefetch" href="/assets/js/19.394a8d2c.js"><link rel="prefetch" href="/assets/js/20.2a518410.js"><link rel="prefetch" href="/assets/js/21.1fc189e2.js"><link rel="prefetch" href="/assets/js/22.28a10f51.js"><link rel="prefetch" href="/assets/js/23.4bb9fe7b.js"><link rel="prefetch" href="/assets/js/24.6d37e926.js"><link rel="prefetch" href="/assets/js/25.f78e6bbd.js"><link rel="prefetch" href="/assets/js/26.6b02b400.js"><link rel="prefetch" href="/assets/js/27.c334b8ce.js"><link rel="prefetch" href="/assets/js/29.2998ac7d.js"><link rel="prefetch" href="/assets/js/3.83754c82.js"><link rel="prefetch" href="/assets/js/30.6c319288.js"><link rel="prefetch" href="/assets/js/4.865692a8.js"><link rel="prefetch" href="/assets/js/5.81254301.js"><link rel="prefetch" href="/assets/js/6.6e8c67be.js"><link rel="prefetch" href="/assets/js/7.e58136ec.js"><link rel="prefetch" href="/assets/js/8.98b65d53.js"><link rel="prefetch" href="/assets/js/9.260f1b84.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fab77d47.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">can</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/interview/" class="nav-link">
+  面试题
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习语言" class="dropdown-title"><span class="title">学习语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习语言" class="mobile-dropdown-title"><span class="title">学习语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/java/.html" class="nav-link">
+  vue.js
+</a></li><li class="dropdown-item"><!----> <a href="/study/java/" class="nav-link router-link-active">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/study/es6/" class="nav-link">
+  es6
+</a></li></ul></div></div><div class="nav-item"><a href="/study/array/" class="nav-link">
+  Array操作
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具使用问题" class="dropdown-title"><span class="title">工具使用问题</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具使用问题" class="mobile-dropdown-title"><span class="title">工具使用问题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/git/" class="nav-link">
+  git
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/interview/" class="nav-link">
+  面试题
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习语言" class="dropdown-title"><span class="title">学习语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习语言" class="mobile-dropdown-title"><span class="title">学习语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/java/.html" class="nav-link">
+  vue.js
+</a></li><li class="dropdown-item"><!----> <a href="/study/java/" class="nav-link router-link-active">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/study/es6/" class="nav-link">
+  es6
+</a></li></ul></div></div><div class="nav-item"><a href="/study/array/" class="nav-link">
+  Array操作
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具使用问题" class="dropdown-title"><span class="title">工具使用问题</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具使用问题" class="mobile-dropdown-title"><span class="title">工具使用问题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/git/" class="nav-link">
+  git
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-静态修饰</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/static.html" class="sidebar-link">static</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-多态</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/polymorphism.html" class="sidebar-link">polymorphism</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-抽象类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/abstract.html" class="sidebar-link">abstract</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-接口</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/interface.html" class="sidebar-link">interface</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>java-单例设计模式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/singleton.html" aria-current="page" class="active sidebar-link">singleton</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/java/singleton.html#单例设计模式" class="sidebar-link">单例设计模式</a></li><li class="sidebar-sub-header"><a href="/study/java/singleton.html#饿汉式-vs-懒汉式-区分" class="sidebar-link">饿汉式 vs 懒汉式 区分</a></li><li class="sidebar-sub-header"><a href="/study/java/singleton.html#饿汉式例子" class="sidebar-link">饿汉式例子:</a></li><li class="sidebar-sub-header"><a href="/study/java/singleton.html#懒汉式例子" class="sidebar-link">懒汉式例子:</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-最终的</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/fianl.html" class="sidebar-link">fianl</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-内部类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/lnnerclass.html" class="sidebar-link">innerclass</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-异常处理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/abnormal.html" class="sidebar-link">abnormal</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-线程</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/thread.html" class="sidebar-link">thread</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-线程生命周期</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/lifecycle.html" class="sidebar-link">lifecycle</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="singleton"><a href="#singleton" class="header-anchor">#</a> singleton</h1> <h2 id="单例设计模式"><a href="#单例设计模式" class="header-anchor">#</a> 单例设计模式</h2> <ol><li>所谓类的单例设计模式。就是采用一定的方法保存在整个的软件系统中，对某个类只能存在一个对象实例。</li> <li>如何来实现？如下例子...</li></ol> <h2 id="饿汉式-vs-懒汉式-区分"><a href="#饿汉式-vs-懒汉式-区分" class="header-anchor">#</a> 饿汉式 vs 懒汉式 区分</h2> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <ol><li>饿汉式：坏处:对象加载时间过长,好处：线程安全的</li> <li>懒汉式：坏处:线程不安全  好处 ：延迟对象的创建</li></ol></div> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>例子思维：</p> <ol><li>私有化类的构造器让 main 方法进行访问</li> <li>提供一个公共的静态方法返回类的对象
+:::</li></ol> <h2 id="饿汉式例子"><a href="#饿汉式例子" class="header-anchor">#</a> 饿汉式例子:</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingletonTest1</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">String<span class="token punctuation">[</span><span class="token punctuation">]</span> args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		Bank bank1 <span class="token operator">=</span> Bank<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		Bank bank2 <span class="token operator">=</span> Bank<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>bank1<span class="token operator">==</span>bank2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//饿汉式</span>
+<span class="token keyword">class</span> <span class="token class-name">Bank</span> <span class="token punctuation">{</span>
+<span class="token comment">//	1.私有化类的构造器</span>
+	<span class="token keyword">private</span> <span class="token function">Bank</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+	<span class="token punctuation">}</span>
+<span class="token comment">//	2.内部创建类的对象</span>
+<span class="token comment">//	4.要求此对象也必须声明为静态的</span>
+	<span class="token keyword">private</span> <span class="token keyword">static</span> Bank instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bank</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//	3.提供公共的静态方法方法，返回类的对象</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> Bank <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="懒汉式例子"><a href="#懒汉式例子" class="header-anchor">#</a> 懒汉式例子:</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingletonTest2</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">String<span class="token punctuation">[</span><span class="token punctuation">]</span> args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		Order o1 <span class="token operator">=</span> Order<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		Order o2 <span class="token operator">=</span> Order<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o1<span class="token operator">==</span>o2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Order</span> <span class="token punctuation">{</span>
+<span class="token comment">//	1.私有化类的构造器</span>
+<span class="token comment">//	2.声明当前类的对象，没有初始化</span>
+<span class="token comment">//	4此对象也必须声明为static的</span>
+	<span class="token keyword">private</span> <span class="token keyword">static</span> Order instance <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+<span class="token comment">//	3.声明public static的返回当前类对象的方法</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> Order <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Order</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">12/7/2020, 10:03:14 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/java/interface.html" class="prev">
+        interface
+      </a></span> <span class="next"><a href="/study/java/fianl.html">
+        fianl
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.259e3284.js" defer></script><script src="/assets/js/2.03478d8e.js" defer></script><script src="/assets/js/28.80451a10.js" defer></script>
+  </body>
+</html>

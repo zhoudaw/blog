@@ -34,11 +34,46 @@
 1. created:在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图
 2. mounted:在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。
 
-### 9 路由导航
+### 9-路由导航
 1. beforeEach((to,from,next))
 2. to 即将要进入的目标
 3. from 当前导航正要离开的路由
 4. next()  一定要调用该方法来 resolve 这个钩子
+
+### 10-组件之间通讯
+1. 公共bus
+```js
+
+import Vue from 'vue'
+const bus = new Vue()
+export default bus 
+// 例子一
+// A页面
+import bus from '@/utils/bus'
+bus.$emit('message', 'hello');.
+// B页面
+import bus from '@/utils/bus'
+bus.$on('message', (e) => {
+    console.log(e)
+})
+
+// 例子二
+//一个组件(A)调用另一个组件(B)的方法
+//B
+mounted () {    
+  bus.$on('testA', this.testA)  
+},
+testA () {
+  console.log('由A组件调用')
+},
+//A
+mounted () {
+  bus.$emit('testA')
+},
+```
+2. provide / inject 
+3. $parent 和 $children
+
 
 
 

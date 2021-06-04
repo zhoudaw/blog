@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>lifecycle | can</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.fab77d47.css" as="style"><link rel="preload" href="/assets/js/app.259e3284.js" as="script"><link rel="preload" href="/assets/js/2.03478d8e.js" as="script"><link rel="preload" href="/assets/js/25.f78e6bbd.js" as="script"><link rel="prefetch" href="/assets/js/10.2a004e8f.js"><link rel="prefetch" href="/assets/js/11.68eb73fb.js"><link rel="prefetch" href="/assets/js/12.a80ff367.js"><link rel="prefetch" href="/assets/js/13.f929eb35.js"><link rel="prefetch" href="/assets/js/14.c87859b1.js"><link rel="prefetch" href="/assets/js/15.a710af26.js"><link rel="prefetch" href="/assets/js/16.1c2bc79a.js"><link rel="prefetch" href="/assets/js/17.aaeed498.js"><link rel="prefetch" href="/assets/js/18.5b1ef161.js"><link rel="prefetch" href="/assets/js/19.394a8d2c.js"><link rel="prefetch" href="/assets/js/20.2a518410.js"><link rel="prefetch" href="/assets/js/21.1fc189e2.js"><link rel="prefetch" href="/assets/js/22.28a10f51.js"><link rel="prefetch" href="/assets/js/23.4bb9fe7b.js"><link rel="prefetch" href="/assets/js/24.6d37e926.js"><link rel="prefetch" href="/assets/js/26.6b02b400.js"><link rel="prefetch" href="/assets/js/27.c334b8ce.js"><link rel="prefetch" href="/assets/js/28.80451a10.js"><link rel="prefetch" href="/assets/js/29.2998ac7d.js"><link rel="prefetch" href="/assets/js/3.83754c82.js"><link rel="prefetch" href="/assets/js/30.6c319288.js"><link rel="prefetch" href="/assets/js/4.865692a8.js"><link rel="prefetch" href="/assets/js/5.81254301.js"><link rel="prefetch" href="/assets/js/6.6e8c67be.js"><link rel="prefetch" href="/assets/js/7.e58136ec.js"><link rel="prefetch" href="/assets/js/8.98b65d53.js"><link rel="prefetch" href="/assets/js/9.260f1b84.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fab77d47.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">can</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/interview/" class="nav-link">
+  面试题
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习语言" class="dropdown-title"><span class="title">学习语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习语言" class="mobile-dropdown-title"><span class="title">学习语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/java/.html" class="nav-link">
+  vue.js
+</a></li><li class="dropdown-item"><!----> <a href="/study/java/" class="nav-link router-link-active">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/study/es6/" class="nav-link">
+  es6
+</a></li></ul></div></div><div class="nav-item"><a href="/study/array/" class="nav-link">
+  Array操作
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具使用问题" class="dropdown-title"><span class="title">工具使用问题</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具使用问题" class="mobile-dropdown-title"><span class="title">工具使用问题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/git/" class="nav-link">
+  git
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/interview/" class="nav-link">
+  面试题
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习语言" class="dropdown-title"><span class="title">学习语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习语言" class="mobile-dropdown-title"><span class="title">学习语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/java/.html" class="nav-link">
+  vue.js
+</a></li><li class="dropdown-item"><!----> <a href="/study/java/" class="nav-link router-link-active">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/study/es6/" class="nav-link">
+  es6
+</a></li></ul></div></div><div class="nav-item"><a href="/study/array/" class="nav-link">
+  Array操作
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具使用问题" class="dropdown-title"><span class="title">工具使用问题</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具使用问题" class="mobile-dropdown-title"><span class="title">工具使用问题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/git/" class="nav-link">
+  git
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-静态修饰</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/static.html" class="sidebar-link">static</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-多态</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/polymorphism.html" class="sidebar-link">polymorphism</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-抽象类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/abstract.html" class="sidebar-link">abstract</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-接口</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/interface.html" class="sidebar-link">interface</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-单例设计模式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/singleton.html" class="sidebar-link">singleton</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-最终的</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/fianl.html" class="sidebar-link">fianl</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-内部类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/lnnerclass.html" class="sidebar-link">innerclass</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-异常处理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/abnormal.html" class="sidebar-link">abnormal</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>java-线程</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/thread.html" class="sidebar-link">thread</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>java-线程生命周期</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/java/lifecycle.html" aria-current="page" class="active sidebar-link">lifecycle</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/java/lifecycle.html#安全性处理-一" class="sidebar-link">安全性处理 一</a></li><li class="sidebar-sub-header"><a href="/study/java/lifecycle.html#安全性处理二" class="sidebar-link">安全性处理二</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="lifecycle"><a href="#lifecycle" class="header-anchor">#</a> lifecycle</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <ul><li>例子：创建3个窗口买票 总数为100张,使用显示Runnable接口的方式</li> <li>1.卖票过程中，出现了重票。错票--&gt;出现了线程安全问题</li> <li>2.问题出现的原因：当某个线程作车票的过程中，尚未操作完成时，其他线程参与进来，也操作了车票</li> <li>3.如何解决：当一个线程在操作ticket的时候，其他线程不能参与进来，直到线程a操作完ticket时，其他线程才开始操作ticket</li> <li>4.在java 中，我们通过同不机制，来解决线程的安全问题。</li> <li>方式一：同步代码块</li> <li>synchronized(同步监视器){</li> <li>//需要被同步的代码</li> <li>}</li> <li>说明：</li> <li>1.操作共享数据的代码，即为需要被同步的代码</li> <li>2.共享数据：多个线程共同操作的变量，比如：ticket就是共享数据.</li> <li>3.同步监视器，俗称：锁。任何一类的对象，都可以充当锁</li> <li>要求：多个线程比要共用同一把锁</li> <li>方法二：同步代码块</li> <li>1.如果操作共享数据的代码完整的声明在一个方法中，我们不妨将此方法声明同步的</li> <li></li></ul></div> <h2 id="安全性处理-一"><a href="#安全性处理-一" class="header-anchor">#</a> 安全性处理 一</h2> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token keyword">class</span> <span class="token class-name">Window1</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> int ticket <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token comment">//    Object obj = new Object();</span>
+    @Override
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">synchronized</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token keyword">this</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//此时的this，唯一的window1的对象</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>ticket <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                        Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>InterruptedException e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;：卖票，票号为:&quot;</span> <span class="token operator">+</span> ticket<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    ticket<span class="token operator">--</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WindowTest1</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">String<span class="token punctuation">[</span><span class="token punctuation">]</span> args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Window1 win <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Window1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Thread t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>win<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Thread t2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>win<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Thread t3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>win<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t1<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">&quot;窗口1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t2<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">&quot;窗口2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t3<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">&quot;窗口3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t2<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t3<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="安全性处理二"><a href="#安全性处理二" class="header-anchor">#</a> 安全性处理二</h2> <div class="language-js extra-class"><pre class="language-js"><code>
+
+<span class="token comment">/**
+ * 例子：创建3个窗口买票 总数为100张
+ */</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Window2</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> int ticket <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Object obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    @Override
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">//             obj= Window2.class</span>
+            <span class="token function">synchronized</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>ticket <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                        Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>InterruptedException e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;:卖票,票号为：&quot;</span> <span class="token operator">+</span> ticket<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    ticket<span class="token operator">--</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WindowTest2</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">String<span class="token punctuation">[</span><span class="token punctuation">]</span> args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Window2 t5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Window2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Window2 t6 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Window2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Window2 t7 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Window2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t5<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">&quot;窗口一&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t6<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">&quot;窗口二&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t7<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">&quot;窗口三&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t5<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t6<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t7<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">1/20/2021, 6:14:57 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/java/thread.html" class="prev">
+        thread
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.259e3284.js" defer></script><script src="/assets/js/2.03478d8e.js" defer></script><script src="/assets/js/25.f78e6bbd.js" defer></script>
+  </body>
+</html>
