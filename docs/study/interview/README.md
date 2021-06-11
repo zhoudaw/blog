@@ -309,6 +309,67 @@ arsgArray:传递的值，必须包含在数组里面
 ```
 ### 13-浅拷贝
 ### 14-深拷贝
+### 15-基本数据类型--->栈 
+```js
+let a =1
+let b=a
+b=3
+console.log(a) //1
+console.log(b) //3 
+// 不会改变值
+```
+### 16-引用数据类型--->堆
+```js
+let a={}
+let b=a
+b.name='zdw'
+b.age=18
+console.log(a)   //zdw 18
+console.log(b)   //zdw 18
+// 修改什么都会一起变化 
+```
+### 17-什么事宏任务/微任务
+1. 存在微任务的话，那么就会执行所有的微任务
+2. 微任务都执行完之后，执行下一个宏任务
+```js
+// 1 7 6 8 2 4 3 5 9 11 10 12
+    console.log('1');
+    setTimeout(function () {  //setTimeout1 寄存
+      console.log('2');
+      process.nextTick(function () {  //process2 寄存
+        console.log('3');
+      })
+      new Promise(function (resolve) {
+        console.log('4'); 
+        resolve();
+      }).then(function () { // then2 寄存
+        console.log('5')
+      })
+    })
+    process.nextTick(function () {  //process1 寄存
+      console.log('6');
+    })
+    new Promise(function (resolve) {  
+      console.log('7');
+      resolve();
+    }).then(function () {  // then1 寄存
+      console.log('8')
+    })
+
+    setTimeout(function () {  // setTimeout2 寄存
+      console.log('9'); 
+      process.nextTick(function () {  // process3
+        console.log('10');
+      })
+      new Promise(function (resolve) {
+        console.log('11');
+        resolve();
+      }).then(function () {  // then3 
+        console.log('12')
+      })
+    })
+   console.log('结束了')
+```
 
 
 ## webpack
